@@ -1,16 +1,19 @@
 
-
+import collections
 # noinspection PyUnusedLocal
 # skus = unicode string
+
 def checkout(skus):
-    
-    import collections
     total = 0
     dic = collections.defaultdict(int)
     for char in skus:
         dic[char] += 1
         
+    # print(char)
+    # print(dic)
     for char in sorted(dic, key=dic.get, reverse=True):
+        # print(char)
+        # if dic.contain('A', 'B', 'C', 'D'):
         if char == 'A':
             if dic[char] == 3:
                 total = total + 130
@@ -30,12 +33,13 @@ def checkout(skus):
 
         if char == 'D':
             total = total + (15*dic[char])
-        
+
         if char == '':
             total = total + 0
-            
-        if not char.isalpha():
+
+        if not char.isalpha() or (char not in "ABCD"):
             return -1
+
 
     return total
     
@@ -44,3 +48,4 @@ def checkout(skus):
     
 
     
+
