@@ -4,15 +4,33 @@
 # skus = unicode string
 def checkout(skus):
     
-    for i in range(3):
-        data = input('Enter items with space: ')
-        user_list = data.split()
-        data_upper = [name.upper() for name in user_list]
-    return 0
-    # print('items: ', data_upper)
+    offer = False
+    # data_upper = [name.upper() for name in user_list]
+    if skus.isalpha() and skus == 'A':
+        if offer == True:
+            return 130
+        print(50)
+        return 50
+    elif skus.isalpha() and skus == 'B':
+        if offer == True:
+            return 45
+        # print(30)
+        return 30
+    
+    elif skus.isalpha() == 'C':
+        print(20)
+        return 20
+    
+    elif skus.isalpha() == 'D':
+        return 15
+    
+    else:
+        return -1
+
     
     
     
     
 
     
+
