@@ -17,11 +17,11 @@ def checkout(skus):
         # print(30)
         return 30
     
-    elif skus.isalpha() == 'C':
+    elif skus.isalpha() and skus == 'C':
         print(20)
         return 20
     
-    elif skus.isalpha() == 'D':
+    elif skus.isalpha() and skus== 'D':
         return 15
     
     else:
@@ -33,4 +33,5 @@ def checkout(skus):
     
 
     
+
 
