@@ -9,7 +9,7 @@ def checkout(skus):
     if skus.isalpha() and skus == 'A':
         if offer == True:
             return 130
-        print(50)
+        # print(50)
         return 50
     elif skus.isalpha() and skus == 'B':
         if offer == True:
@@ -18,20 +18,23 @@ def checkout(skus):
         return 30
     
     elif skus.isalpha() and skus == 'C':
-        print(20)
+        # print(20)
         return 20
+    
+    elif skus == "":
+        return 0
     
     elif skus.isalpha() and skus== 'D':
         return 15
     
     else:
         return -1
-
     
     
     
     
 
     
+
 
 
