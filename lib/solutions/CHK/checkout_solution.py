@@ -3,6 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+    
     for i in range(3):
         data = input('Enter items with space: ')
         user_list = data.split()
@@ -15,5 +16,3 @@ def checkout(skus):
     
 
     
-
-
