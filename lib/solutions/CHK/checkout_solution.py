@@ -4,37 +4,43 @@
 # skus = unicode string
 def checkout(skus):
     
-    offer = False
-    # data_upper = [name.upper() for name in user_list]
-    if skus.isalpha() and skus == 'A':
-        if offer == True:
-            return 130
-        # print(50)
-        return 50
-    elif skus.isalpha() and skus == 'B':
-        if offer == True:
-            return 45
-        # print(30)
-        return 30
-    
-    elif skus.isalpha() and skus == 'C':
-        # print(20)
-        return 20
-    
-    elif skus == "":
-        return 0
-    
-    elif skus.isalpha() and skus== 'D':
-        return 15
-    
-    else:
-        return -1
+    import collections
+    total = 0
+    dic = collections.defaultdict(int)
+    for char in skus:
+        dic[char] += 1
+        
+    for char in sorted(dic, key=dic.get, reverse=True):
+        if char == 'A':
+            if dic[char] == 3:
+                total = total + 130
+                # print(total)
+            else:
+                total = total + (50*dic[char])
+                # print(total)
+        if char == 'B':
+            if dic[char] == 2:
+                total = total + 45
+                # print(total)
+            else:
+                total = total + (30*dic[char])
+                # print(total)
+        if char == 'C':
+            total = total + (20*dic[char])
+
+        if char == 'D':
+            total = total + (15*dic[char])
+        
+        if char == '':
+            total = total + 0
+            
+        if not char.isalpha():
+            return -1
+
+    return total
     
     
     
     
 
     
-
-
-
