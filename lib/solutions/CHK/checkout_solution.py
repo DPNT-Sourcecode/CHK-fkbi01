@@ -15,10 +15,12 @@ def checkout(skus):
         # print(char)
         # if dic.contain('A', 'B', 'C', 'D'):
         if char == 'A':
+            mod3 = dic[char] // 3
             if dic[char] % 3 == 0:
-                total = total + ((dic[char] // 3)*130)
+                total = total + ((mod3)*130)
+                # print(total)
             elif dic[char] > 3:
-                total = total + 130 + (50*(dic[char]-3))
+                total = total + (130*mod3) + (50*(dic[char]-mod3*3))
                 # print(total)
             else:
                 total = total + (50*dic[char])
@@ -26,13 +28,13 @@ def checkout(skus):
         if char == 'B':
             mod = dic[char] // 2
             if dic[char] % 2 == 0:
-                total = total + ((dic[char] // 2)*45)
+                total = total + (mod*45)
             elif dic[char] > 2:
                 total = total + (45*mod) + (30*(dic[char]-(mod*2)))
                 # print(total)
             else:
                 total = total + (30*dic[char])
-                print(total)
+                # print(total)
         
         if char == 'C':
             total = total + (20*dic[char])
@@ -47,9 +49,7 @@ def checkout(skus):
             return -1
 
     return total
-    
-    
-    
 
     
+
 
